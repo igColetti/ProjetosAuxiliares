@@ -1,0 +1,1905 @@
+object Module: TModule
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 1017
+  HorizontalOffset = -8
+  VerticalOffset = -8
+  Width = 1920
+  PPI = 96
+  object conexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Port = 0
+    User = 'SYSDBA'
+    Password = '[abacaxi]'
+    Protocol = 'firebirdd-3.0'
+    left = 32
+    top = 32
+  end
+  object qrPessoas: TZQuery
+    Connection = conexao
+    AfterScroll = qrPessoasAfterScroll
+    UpdateObject = upPessoas
+    SQL.Strings = (
+      'select * from contato a'
+      'order by a.NOME'
+    )
+    Params = <>
+    left = 1160
+    top = 125
+    object qrPessoasID_CONTATO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrPessoasNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrPessoasTIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrPessoasATIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'ATIVO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrPessoasOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qrPessoasENDERECO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENDERECO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1200
+    end
+    object qrPessoasID_CIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrPessoasCPF_CNPJ: TStringField
+      FieldKind = fkData
+      FieldName = 'CPF_CNPJ'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qrPessoasEMAIL: TStringField
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qrPessoasTELEFONE1: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE1'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrPessoasTELEFONE2: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE2'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrPessoasTESTE: TSmallintField
+      FieldKind = fkData
+      FieldName = 'TESTE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object upPessoas: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from CONTATO'
+      'where ID_CONTATO = :ID_CONTATO'
+    )
+    InsertSQL.Strings = (
+      'insert into contato (NOME,TIPO,CPF_CNPJ,ATIVO,OBS, ID_CIDADE, TELEFONE1, TELEFONE2, EMAIL, ENDERECO)'
+      'values (:NOME, :TIPO, :CPF_CNPJ, :ATIVO, :OBS, :ID_CIDADE, :TELEFONE1, :TELEFONE2, :EMAIL, :ENDERECO)'
+    )
+    ModifySQL.Strings = (
+      'update contato'
+      'Set NOME = :NOME, TIPO = :TIPO, ATIVO = :ATIVO, CPF_CNPJ = :CPF_CNPJ , OBS = :OBS, ID_CIDADE = :ID_CIDADE'
+      'where ID_CONTATO = :ID_CONTATO'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 1160
+    top = 192
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'NOME'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ATIVO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CPF_CNPJ'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CIDADE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CONTATO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONE1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONE2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'EMAIL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ENDERECO'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrContatoEmpresa: TZQuery
+    Connection = conexao
+    UpdateObject = upContatoEmpresa
+    SQL.Strings = (
+      'Select a.*,b.Nome,c.Nome from CONTATO_EMPRESA a, CONTATO b, CONTATO c where a.ID_CONTATO_PF = b.ID_CONTATO and a.ID_CONTATO_PJ = c.ID_CONTATO '
+    )
+    Params = <>
+    left = 32
+    top = 272
+    object qrContatoEmpresaID_CONTATO_PF: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO_PF'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrContatoEmpresaID_CONTATO_PJ: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO_PJ'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrContatoEmpresaNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qrContatoEmpresaNOME_1: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME_1'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+  end
+  object upContatoEmpresa: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from CONTATO_EMPRESA a'
+      'where ID_CONTATO_PF = :ID_CONTATO_PF'
+      'and ID_CONTATO_PJ = :ID_CONTATO_PJ'
+      ''
+    )
+    InsertSQL.Strings = (
+      'insert into CONTATO_EMPRESA (ID_CONTATO_PF, ID_CONTATO_PJ) values (:ID_CONTATO_PF, :ID_CONTATO_PJ); '
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 32
+    top = 344
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CONTATO_PF'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CONTATO_PJ'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrFiltroPessoa: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from contato'
+    )
+    Params = <>
+    left = 120
+    top = 32
+    object qrFiltroPessoaID_CONTATO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrFiltroPessoaNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrFiltroPessoaTIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrFiltroPessoaATIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'ATIVO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrFiltroPessoaOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qrFiltroPessoaENDERECO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENDERECO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1200
+    end
+    object qrFiltroPessoaID_CIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrFiltroPessoaCPF_CNPJ: TStringField
+      FieldKind = fkData
+      FieldName = 'CPF_CNPJ'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qrFiltroPessoaEMAIL: TStringField
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qrFiltroPessoaTELEFONE1: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE1'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrFiltroPessoaTELEFONE2: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE2'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrFiltroPessoaTESTE: TSmallintField
+      FieldKind = fkData
+      FieldName = 'TESTE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qrNegocio: TZQuery
+    Connection = conexao
+    UpdateObject = upNegocio
+    SQL.Strings = (
+      '      select a.*,B.ID_CONTATO,B.NOME,C.DESCRICAO,D.ID_CONTATO,D.NOME,p.total'
+      ' from negocio a'
+      '   join   contato b'
+      '      on a.id_contato_organizacao = b.id_contato'
+      ''
+      '    join   contato d'
+      '      on a.id_contato_pessoa = d.id_contato'
+      ''
+      '    join etapa c'
+      '      on a.id_etapa = c.id_etapa'
+      ''
+      '    left outer join pedido p'
+      '      on a.id_pedido = p.id_pedido'
+      'order by a.id_negocio'
+    )
+    Params = <>
+    left = 680
+    top = 568
+    object qrNegocioID_NEGOCIO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_NEGOCIO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrNegocioDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrNegocioDATA_CRIACAO: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'DATA_CRIACAO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrNegocioID_CONTATO_PESSOA: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO_PESSOA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrNegocioID_CONTATO_ORGANIZACAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO_ORGANIZACAO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrNegocioOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qrNegocioID_ETAPA: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_ETAPA'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrNegocioSITUACAO: TStringField
+      FieldKind = fkData
+      FieldName = 'SITUACAO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qrNegocioID_PEDIDO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PEDIDO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrNegocioID_CONTATO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrNegocioNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrNegocioDESCRICAO_1: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO_1'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 120
+    end
+    object qrNegocioID_CONTATO_1: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO_1'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrNegocioNOME_1: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME_1'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrNegocioTOTAL: TFloatField
+      FieldKind = fkData
+      FieldName = 'TOTAL'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = 'R$ ###,###,##0.00'
+      EditFormat = 'R$ ###,###,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object upNegocio: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from Negocio'
+      'where ID_NEGOCIO = :ID_NEGOCIO'
+    )
+    InsertSQL.Strings = (
+      'insert into NEGOCIO (DESCRICAO,ID_CONTATO_ORGANIZACAO,ID_CONTATO_PESSOA,OBS,ID_ETAPA,SITUACAO,ID_PEDIDO)'
+      'VALUES (:DESCRICAO,:ID_CONTATO_ORGANIZACAO,:ID_CONTATO_PESSOA,:OBS,:ID_ETAPA,:SITUACAO,:ID_PEDIDO)'
+    )
+    ModifySQL.Strings = (
+      ' update negocio'
+      'set DESCRICAO = :DESCRICAO,'
+      'ID_CONTATO_ORGANIZACAO = :ID_CONTATO_ORGANIZACAO,'
+      'ID_CONTATO_PESSOA = :ID_CONTATO_PESSOA,'
+      'OBS = :OBS,'
+      'ID_ETAPA = :ID_ETAPA,'
+      'SITUACAO = :SITUACAO,'
+      'ID_PEDIDO = :ID_PEDIDO'
+      'where ID_NEGOCIO = :ID_NEGOCIO'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 120
+    top = 272
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRICAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CONTATO_ORGANIZACAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CONTATO_PESSOA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_ETAPA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SITUACAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PEDIDO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_NEGOCIO'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrPedido: TZQuery
+    Connection = conexao
+    AfterScroll = qrPedidoAfterScroll
+    UpdateObject = upPedido
+    SQL.Strings = (
+      ' select a.*, b.nome,c.descricao from PEDIDO a, CONTATO b, PEDIDO_STATUS c'
+      ' where a.id_pessoa = b.id_contato'
+      ' and a.id_pedido_status = c.id_pedido_status'
+      'order by a.num_doc'
+    )
+    Params = <>
+    left = 904
+    top = 128
+    object qrPedidoID_PEDIDO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PEDIDO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrPedidoDATA_COTACAO: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_COTACAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrPedidoNUM_DOC: TStringField
+      FieldKind = fkData
+      FieldName = 'NUM_DOC'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrPedidoOBSERVACAO: TStringField
+      FieldKind = fkData
+      FieldName = 'OBSERVACAO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 600
+    end
+    object qrPedidoDATA_PEDIDO: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_PEDIDO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrPedidoTIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 4
+    end
+    object qrPedidoID_PEDIDO_STATUS: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PEDIDO_STATUS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrPedidoID_PESSOA: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PESSOA'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrPedidoTOTAL: TFloatField
+      FieldKind = fkData
+      FieldName = 'TOTAL'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = 'R$ ###,###,##0.00'
+      EditFormat = 'R$ ###,###,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qrPedidoNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrPedidoDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 240
+    end
+  end
+  object upPedido: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from PEDIDO'
+      'where ID_PEDIDO = :ID_PEDIDO '
+    )
+    InsertSQL.Strings = (
+      'insert into PEDIDO (NUM_DOC,OBSERVACAO,TIPO,ID_PEDIDO_STATUS,ID_PESSOA) '
+      'values (:NUM_DOC,:OBSERVACAO,:TIPO,:ID_PEDIDO_STATUS,:ID_PESSOA);'
+    )
+    ModifySQL.Strings = (
+      'UPDATE PEDIDO'
+      'set NUM_DOC = :NUM_DOC, OBSERVACAO = :OBSERVACAO, TIPO = :TIPO, ID_PEDIDO_STATUS = :ID_PEDIDO_STATUS, ID_PESSOA = :ID_PESSOA'
+      'where ID_PEDIDO = :ID_PEDIDO;'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 904
+    top = 192
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'NUM_DOC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBSERVACAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PEDIDO_STATUS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PESSOA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PEDIDO'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrEtapa: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from etapa'
+    )
+    Params = <>
+    left = 216
+    top = 192
+    object qrEtapaID_ETAPA: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_ETAPA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrEtapaDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 120
+    end
+  end
+  object qrCFisicaNegocio: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from Contato c'
+      'where c.tipo = ''F''  '
+      'order by c.NOME '
+    )
+    Params = <>
+    left = 216
+    top = 272
+    object qrCFisicaNegocioID_CONTATO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrCFisicaNegocioNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrCFisicaNegocioTIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrCFisicaNegocioATIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'ATIVO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrCFisicaNegocioOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qrCFisicaNegocioENDERECO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENDERECO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1200
+    end
+    object qrCFisicaNegocioID_CIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrCFisicaNegocioCPF_CNPJ: TStringField
+      FieldKind = fkData
+      FieldName = 'CPF_CNPJ'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qrCFisicaNegocioEMAIL: TStringField
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qrCFisicaNegocioTELEFONE1: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE1'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrCFisicaNegocioTELEFONE2: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE2'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrCFisicaNegocioTESTE: TSmallintField
+      FieldKind = fkData
+      FieldName = 'TESTE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qrCJuridicaNegocio: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from Contato c'
+      'where c.tipo = ''J''  '
+      'order by c.NOME '
+    )
+    Params = <>
+    left = 256
+    top = 344
+    object qrCJuridicaNegocioID_CONTATO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrCJuridicaNegocioNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrCJuridicaNegocioTIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrCJuridicaNegocioATIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'ATIVO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrCJuridicaNegocioOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qrCJuridicaNegocioENDERECO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENDERECO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1200
+    end
+    object qrCJuridicaNegocioID_CIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrCJuridicaNegocioCPF_CNPJ: TStringField
+      FieldKind = fkData
+      FieldName = 'CPF_CNPJ'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qrCJuridicaNegocioEMAIL: TStringField
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qrCJuridicaNegocioTELEFONE1: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE1'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrCJuridicaNegocioTELEFONE2: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE2'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qrCJuridicaNegocioTESTE: TSmallintField
+      FieldKind = fkData
+      FieldName = 'TESTE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qrEtapaBusca: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select -1 as id_etapa, ''Todos'' as descricao from rdb$database'
+      'union all'
+      'select  id_etapa,  descricao from etapa'
+    )
+    Params = <>
+    left = 304
+    top = 32
+    object qrEtapaBuscaID_ETAPA: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_ETAPA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object qrEtapaBuscaDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 120
+    end
+  end
+  object qrItens: TZQuery
+    Connection = conexao
+    UpdateObject = upItensPedido
+    OnApplyUpdateError = qrItensApplyUpdateError
+    AfterApplyUpdates = qrItensAfterApplyUpdates
+    AfterInsert = qrItensAfterInsert
+    SQL.Strings = (
+      ' select a.*, b.ID_PRODUTO ,b.DESCRICAO'
+      'from pedido_item a, produtos b'
+      'where a.ID_PEDIDO = :ID_PEDIDO'
+      'and a.ID_PRODUTO = b.ID_PRODUTO'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PEDIDO'
+        ParamType = ptUnknown
+      end>
+    left = 1080
+    top = 125
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PEDIDO'
+        ParamType = ptUnknown
+      end>
+    object qrItensID_PEDIDO_ITEM: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PEDIDO_ITEM'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrItensID_PEDIDO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PEDIDO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrItensQUANTIDADE: TFloatField
+      FieldKind = fkData
+      FieldName = 'QUANTIDADE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnChange = qrItensQUANTIDADEChange
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qrItensPRECO_UNITARIO: TFloatField
+      FieldKind = fkData
+      FieldName = 'PRECO_UNITARIO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnChange = qrItensPRECO_UNITARIOChange
+      DisplayFormat = 'R$ ###,###,##0.00'
+      EditFormat = 'R$ ###,###,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qrItensDESC_ACRESC: TFloatField
+      FieldKind = fkData
+      FieldName = 'DESC_ACRESC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qrItensTOTAL_ITEM: TFloatField
+      FieldKind = fkData
+      FieldName = 'TOTAL_ITEM'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = 'R$ ###,###,##0.00'
+      EditFormat = 'R$ ###,###,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qrItensID_PRODUTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PRODUTO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrItensID_PRODUTO_1: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PRODUTO_1'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrItensDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+  end
+  object upItensPedido: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from PEDIDO_ITEM'
+      'where ID_PEDIDO_ITEM = :ID_PEDIDO_ITEM'
+    )
+    InsertSQL.Strings = (
+      'insert into PEDIDO_ITEM (ID_PEDIDO,QUANTIDADE,PRECO_UNITARIO,TOTAL_ITEM,ID_PRODUTO)'
+      ' values (:ID_PEDIDO,:QUANTIDADE,:PRECO_UNITARIO,:TOTAL_ITEM,:ID_PRODUTO)'
+    )
+    ModifySQL.Strings = (
+      'update PEDIDO_ITEM'
+      'set ID_PEDIDO = :ID_PEDIDO,'
+      'QUANTIDADE = :QUANTIDADE,'
+      'PRECO_UNITARIO = :PRECO_UNITARIO,'
+      'DESC_ACRESC = :DESC_ACRESC,'
+      'TOTAL_ITEM = :TOTAL_ITEM,'
+      'ID_PRODUTO = :ID_PRODUTO'
+      'where ID_PEDIDO_ITEM = :ID_PEDIDO_ITEM;'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 1080
+    top = 192
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PEDIDO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'QUANTIDADE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PRECO_UNITARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESC_ACRESC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TOTAL_ITEM'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PRODUTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PEDIDO_ITEM'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrAtividade: TZQuery
+    Connection = conexao
+    UpdateObject = upAtividade
+    SQL.Strings = (
+      'select a.*,b.nome,c.descricao,d.descricao,e.nome from ATIVIDADE a, CONTATO b, NEGOCIO c, tipo_atividade d, contato e'
+      'where a.id_contato = b.id_contato'
+      'and a.id_negocio = c.id_negocio'
+      'and a.id_tipo_atividade = d.id_tipo_atividade'
+      'and a.id_organizacao = e.id_contato'
+    )
+    Params = <>
+    left = 328
+    top = 576
+    object qrAtividadeID_ATIVIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_ATIVIDADE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrAtividadeDATA: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      EditMask = '00/00/0000;1;_'
+    end
+    object qrAtividadeHORA: TTimeField
+      FieldKind = fkData
+      FieldName = 'HORA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      EditMask = '!90:00;1;_'
+    end
+    object qrAtividadeNOTAS: TStringField
+      FieldKind = fkData
+      FieldName = 'NOTAS'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object qrAtividadeDURACAO: TTimeField
+      FieldKind = fkData
+      FieldName = 'DURACAO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      EditMask = '!90:00;1;_'
+    end
+    object qrAtividadeID_CONTATO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrAtividadeID_NEGOCIO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_NEGOCIO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrAtividadeASSUNTO: TStringField
+      FieldKind = fkData
+      FieldName = 'ASSUNTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrAtividadeID_TIPO_ATIVIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_TIPO_ATIVIDADE'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrAtividadeID_ORGANIZACAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_ORGANIZACAO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrAtividadeNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrAtividadeDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrAtividadeDESCRICAO_1: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO_1'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrAtividadeNOME_1: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME_1'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+  end
+  object upAtividade: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from atividade'
+      'where ID_CONTATO = :ID_CONTATO'
+    )
+    InsertSQL.Strings = (
+      'insert into ATIVIDADE (DATA,HORA,NOTAS,DURACAO,ID_CONTATO,ID_NEGOCIO,ASSUNTO,ID_TIPO_ATIVIDADE,ID_ORGANIZACAO)'
+      'values (:DATA,:HORA,:NOTAS,:DURACAO,:ID_CONTATO,:ID_NEGOCIO,:ASSUNTO,:ID_TIPO_ATIVIDADE,:ID_ORGANIZACAO)'
+    )
+    ModifySQL.Strings = (
+      'update ATIVIDADE'
+      'Set DATA = :DATA,'
+      'HORA = :HORA,'
+      'NOTAS = :NOTAS,'
+      'DURACAO = :DURACAO,'
+      'ID_CONTATO = :ID_CONTATO,'
+      'ID_NEGOCIO = :ID_NEGOCIO,'
+      'ASSUNTO = :ASSUNTO,'
+      'ID_TIPO_ATIVIDADE = :ID_TIPO_ATIVIDADE,'
+      'ID_ORGANIZACAO  = :ID_ORGANIZACAO'
+      'where ID_ATIVIDADE = :ID_ATIVIDADE'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 120
+    top = 192
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'DATA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NOTAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DURACAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CONTATO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_NEGOCIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ASSUNTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_TIPO_ATIVIDADE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_ORGANIZACAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_ATIVIDADE'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrProdutos: TZQuery
+    Connection = conexao
+    UpdateObject = upProdutos
+    SQL.Strings = (
+      'select * from produtos a  where a.ATIVO = ''S'''
+    )
+    Params = <>
+    left = 992
+    top = 125
+    object qrProdutosID_PRODUTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PRODUTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrProdutosDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrProdutosSERVICO: TStringField
+      FieldKind = fkData
+      FieldName = 'SERVICO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrProdutosOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qrProdutosATIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'ATIVO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 4
+    end
+    object qrProdutosVALOR: TFloatField
+      FieldKind = fkData
+      FieldName = 'VALOR'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ' ###,###,##0.00'
+      EditFormat = '###,###,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object upProdutos: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from PRODUTOS a'
+      'where a.ID_PRODUTO = :ID_PRODUTO'
+    )
+    InsertSQL.Strings = (
+      'insert into PRODUTOS (DESCRICAO,SERVICO,VALOR,OBS,ATIVO) values (:DESCRICAO,:SERVICO,:VALOR,:OBS,:ATIVO);'
+    )
+    ModifySQL.Strings = (
+      'UPDATE PRODUTOS'
+      'set DESCRICAO = :DESCRICAO, SERVICO = :SERVICO, VALOR = :VALOR, OBS = :OBS, ATIVO = :ATIVO'
+      'where ID_PRODUTO = :ID_PRODUTO'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 992
+    top = 192
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRICAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SERVICO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'VALOR'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ATIVO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PRODUTO'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrStatus: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from  PEDIDO_STATUS'
+    )
+    Params = <>
+    left = 1240
+    top = 125
+    object qrStatusID_PEDIDO_STATUS: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PEDIDO_STATUS'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrStatusDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 240
+    end
+  end
+  object qrProdutoBusca: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from produtos a where a.ID_PRODUTO = :ID_PRODUTO'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PRODUTO'
+        ParamType = ptUnknown
+      end>
+    left = 1320
+    top = 125
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PRODUTO'
+        ParamType = ptUnknown
+      end>
+    object qrProdutoBuscaID_PRODUTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PRODUTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrProdutoBuscaDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrProdutoBuscaSERVICO: TStringField
+      FieldKind = fkData
+      FieldName = 'SERVICO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qrProdutoBuscaOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qrProdutoBuscaATIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'ATIVO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 4
+    end
+    object qrProdutoBuscaVALOR: TFloatField
+      FieldKind = fkData
+      FieldName = 'VALOR'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object qrCidade: TZQuery
+    Connection = conexao
+    UpdateObject = upCidade
+    SQL.Strings = (
+      'select c.*, e.SIGLA from cidade c, estado e where c.id_estado = e.id_estado'
+    )
+    Params = <>
+    left = 558
+    top = 408
+    object qrCidadeID_CIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrCidadeNOME: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qrCidadeID_ESTADO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_ESTADO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrCidadeSIGLA: TStringField
+      FieldKind = fkData
+      FieldName = 'SIGLA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 8
+    end
+  end
+  object upCidade: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from cidade a'
+      'where a.ID_CIDADE = :ID_CIDADE'
+    )
+    InsertSQL.Strings = (
+      'insert into CIDADE (NOME,ID_ESTADO) values (:NOME,:ID_ESTADO)'
+    )
+    ModifySQL.Strings = (
+      'update CIDADE'
+      'set NOME = :NOME,'
+      'ID_ESTADO = :ID_ESTADO'
+      'where ID_CIDADE = :ID_CIDADE'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 648
+    top = 404
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'NOME'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_ESTADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CIDADE'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrEstado: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from ESTADO'
+    )
+    Params = <>
+    left = 1023
+    top = 446
+  end
+  object qrTipoAtividade: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from TIPO_ATIVIDADE'
+    )
+    Params = <>
+    left = 1328
+    top = 596
+    object qrTipoAtividadeID_TIPO_ATIVIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_TIPO_ATIVIDADE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrTipoAtividadeDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+  end
+end

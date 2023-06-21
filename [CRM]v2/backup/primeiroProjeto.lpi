@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="primeiroProjeto"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="3">
+      <Item1>
+        <PackageName Value="FCL"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="zcomponent"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
+      </Item3>
+    </RequiredPackages>
+    <Units Count="12">
+      <Unit0>
+        <Filename Value="primeiroProjeto.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="cdpessoas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadPessoa"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdPessoas"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="umodule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Module"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uModule"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="cdpessoaempresa.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadPessoaEmpresa"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdPessoaEmpresa"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="cdnegocio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadNegocio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdNegocio"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="menu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MenuCad"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="cdatividade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadAtividades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdAtividade"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="cdcidade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadCidade"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdCidade"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="cdproduto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdProduto"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="cdvenda.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadVenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdVenda"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\[Teste-TXT]\teste.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\[Teste-TXT]\module.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule1"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit11>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="primeiroProjeto"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="..\[Teste-TXT]"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

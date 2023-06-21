@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units Count="15">
+      <Unit0>
+        <Filename Value="primeiroProjeto.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="64" Y="21"/>
+        <UsageCount Value="138"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="cdpessoas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadPessoa"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdPessoas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="217"/>
+        <CursorPos X="2" Y="225"/>
+        <UsageCount Value="138"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="umodule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Module"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uModule"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="9"/>
+        <CursorPos X="64" Y="29"/>
+        <UsageCount Value="138"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="cdpessoaempresa.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadPessoaEmpresa"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdPessoaEmpresa"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="36"/>
+        <CursorPos X="144" Y="58"/>
+        <UsageCount Value="115"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="cdnegocio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadNegocio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdNegocio"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="142"/>
+        <CursorPos X="78" Y="170"/>
+        <UsageCount Value="103"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="menu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MenuCad"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="94"/>
+        <CursorPos X="18" Y="100"/>
+        <UsageCount Value="102"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="cdatividade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadAtividades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdAtividade"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="279"/>
+        <CursorPos X="16" Y="285"/>
+        <UsageCount Value="92"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="cdcidade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadCidade"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdCidade"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="110"/>
+        <CursorPos X="16" Y="125"/>
+        <UsageCount Value="88"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="cdproduto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdProduto"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="73"/>
+        <CursorPos X="37" Y="97"/>
+        <UsageCount Value="84"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="cdvenda.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cadVenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cdVenda"/>
+        <TopLine Value="265"/>
+        <CursorPos X="39" Y="286"/>
+        <UsageCount Value="81"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\[Teste-TXT]\teste.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="35"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\[Teste-TXT]\module.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule1"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <UsageCount Value="35"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus\lcl\include\customcombobox.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="144"/>
+        <CursorPos Y="213"/>
+        <UsageCount Value="8"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\..\00000018\Âncoras no form\Unit1.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <UsageCount Value="9"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\..\..\Downloads\zeosdbo-7.2.4-stable\src\dbc\ZDbcInterbase6Utils.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="906"/>
+        <CursorPos Y="910"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit14>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="297" Column="43" TopLine="275"/>
+      </Position1>
+      <Position2>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="207" Column="44" TopLine="190"/>
+      </Position2>
+      <Position3>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="279" Column="38" TopLine="265"/>
+      </Position3>
+      <Position4>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="271" Column="50" TopLine="265"/>
+      </Position4>
+      <Position5>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="287" Column="44" TopLine="265"/>
+      </Position5>
+      <Position6>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="279" Column="55" TopLine="265"/>
+      </Position6>
+      <Position7>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="208" Column="44" TopLine="208"/>
+      </Position7>
+      <Position8>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="272" Column="32" TopLine="245"/>
+      </Position8>
+      <Position9>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="293" TopLine="265"/>
+      </Position9>
+      <Position10>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="298" Column="12" TopLine="282"/>
+      </Position10>
+      <Position11>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="297" Column="30" TopLine="277"/>
+      </Position11>
+      <Position12>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="284" Column="32" TopLine="273"/>
+      </Position12>
+      <Position13>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="340" TopLine="313"/>
+      </Position13>
+      <Position14>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="279" Column="53" TopLine="273"/>
+      </Position14>
+      <Position15>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="172" Column="3" TopLine="157"/>
+      </Position15>
+      <Position16>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="272" Column="44" TopLine="252"/>
+      </Position16>
+      <Position17>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="278" Column="44" TopLine="258"/>
+      </Position17>
+      <Position18>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="229" Column="12" TopLine="212"/>
+      </Position18>
+      <Position19>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="241" Column="21" TopLine="215"/>
+      </Position19>
+      <Position20>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="229" Column="21" TopLine="227"/>
+      </Position20>
+      <Position21>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="237" Column="4" TopLine="235"/>
+      </Position21>
+      <Position22>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="233" Column="4" TopLine="218"/>
+      </Position22>
+      <Position23>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="272" Column="19" TopLine="270"/>
+      </Position23>
+      <Position24>
+        <Filename Value="umodule.pas"/>
+        <Caret Line="276" Column="15" TopLine="253"/>
+      </Position24>
+      <Position25>
+        <Filename Value="cdpessoas.pas"/>
+        <Caret Line="85" TopLine="55"/>
+      </Position25>
+      <Position26>
+        <Filename Value="cdvenda.pas"/>
+        <Caret Line="279" Column="9" TopLine="265"/>
+      </Position26>
+      <Position27>
+        <Filename Value="cdnegocio.pas"/>
+        <Caret Line="121" TopLine="107"/>
+      </Position27>
+      <Position28>
+        <Filename Value="cdnegocio.pas"/>
+        <Caret Line="157" TopLine="144"/>
+      </Position28>
+      <Position29>
+        <Filename Value="cdnegocio.pas"/>
+        <Caret Line="163" TopLine="144"/>
+      </Position29>
+      <Position30>
+        <Filename Value="cdpessoas.pas"/>
+        <Caret Line="225" Column="2" TopLine="217"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode="default"/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="cdpessoaempresa.pas"/>
+        <Line Value="71"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="cdnegocio.pas"/>
+        <Line Value="253"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="cdnegocio.pas"/>
+        <Line Value="157"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="cdnegocio.pas"/>
+        <Line Value="163"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="cdnegocio.pas"/>
+        <Line Value="121"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="cdnegocio.pas"/>
+        <Line Value="170"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkData"/>
+        <WatchData Value="ShowMessage(Module.qrNegocio.SQL.Text"/>
+        <WatchScope Value="wpsGlobal"/>
+        <WatchKind Value="wpkWrite"/>
+        <InitialEnabled Value="False"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="cdnegocio.pas"/>
+        <Line Value="169"/>
+      </Item>
+    </BreakPoints>
+    <Watches>
+      <Item>
+        <Expression Value="Module.qrContatoEmpresaID_CONTATO_PF.Value"/>
+      </Item>
+      <Item>
+        <Expression Value="Value"/>
+      </Item>
+      <Item>
+        <Expression Value="ShowMessage(Module.qrNegocio.SQL.Text"/>
+      </Item>
+      <Item>
+        <Expression Value="Module.qrNegocio.SQL"/>
+      </Item>
+    </Watches>
+  </Debugging>
+</CONFIG>
